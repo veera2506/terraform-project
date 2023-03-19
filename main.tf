@@ -1,8 +1,8 @@
 #this file consists of code for instances and sg
 provider "aws" {
 region = "ap-south-1"
-access_key = ""
-secret_key = ""
+access_key = "AKIARDQU4XPQOYYDDHOC"
+secret_key = "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"
 }
 
 resource "aws_instance" "one" {
@@ -68,7 +68,7 @@ resource "aws_security_group" "three" {
 }
 
 resource "aws_s3_bucket" "four" {
-  bucket = "raham0077552bucketterra"
+  bucket = "siva-terras3"
 }
 
 
