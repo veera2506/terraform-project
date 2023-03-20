@@ -1,16 +1,16 @@
 #this file consists of code for instances and sg
 provider "aws" {
-region = "ap-south-1"
-access_key = "AKIARDQU4XPQOYYDDHOC"
-secret_key = "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"
+region = "us-east-1"
+access_key = "AKIAR2WXNUP6IX4NNMX2"
+secret_key = "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"
 }
 
 resource "aws_instance" "one" {
-  ami             = "ami-0d81306eddc614a45"
+  ami             = "ami-005f9685cb30f234b"
   instance_type   = "t2.micro"
-  key_name        = "eks"
+  key_name        = "linux-key"
   vpc_security_group_ids = [aws_security_group.three.id]
-  availability_zone = "ap-south-1a"
+  availability_zone = "us-east-1a"
   user_data       = <<EOF
 #!/bin/bash
 sudo -i
@@ -25,11 +25,11 @@ EOF
 }
 
 resource "aws_instance" "two" {
-  ami             = "ami-0d81306eddc614a45"
+  ami             = "ami-005f9685cb30f234b"
   instance_type   = "t2.micro"
-  key_name        = "eks"
+  key_name        = "linux-key"
   vpc_security_group_ids = [aws_security_group.three.id]
-  availability_zone = "ap-south-1b"
+  availability_zone = "us-east-1b"
   user_data       = <<EOF
 #!/bin/bash
 sudo -i
@@ -68,7 +68,7 @@ resource "aws_security_group" "three" {
 }
 
 resource "aws_s3_bucket" "four" {
-  bucket = "siva-terras3"
+  bucket = "veera-terras3"
 }
 
 
